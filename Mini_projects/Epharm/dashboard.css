@@ -43,11 +43,11 @@
   border-radius: 64px;
   height: 50%;
   width: 70%;
-  background-color: lightgreen;
+  background-color: rgb(168, 215, 247);
 }
 
 .btn1:hover {
-  background-color: greenyellow;
+  background-color: rgb(5, 57, 102);
 }
 #content {
   padding: 150px;
@@ -56,24 +56,17 @@
 #bodycontent {
   text-align: center;
   position: fixed;
-  height: 100%;
+  height: 450px;
   width: 100%;
-  background-image: url("med.jpg");
+  background-image: url("24286.jpg");
   /* background-repeat:no-repeat; */
 
   background-size: 100% 100%;
   object-fit: cover;
-  overflow: auto;
+  overflow-y: auto;
   z-index: 0.5;
 
-  color: darkgreen;
-}
-
-#btn2 {
-  border-radius: 30px;
-  height: 70px;
-  width: 200px;
-  background-color: lightgreen;
+  color: rgb(3, 59, 94);
 }
 
 .modal {

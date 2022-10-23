@@ -11,7 +11,9 @@
   overflow: auto;
   /* background-color: blue; */
 }
-
+.a {
+  text-align: center;
+}
 #modal-content {
   background-color: silver;
   margin-top: 200px;
