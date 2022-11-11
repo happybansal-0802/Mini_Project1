@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <title></title>
     <style>
         
@@ -19,16 +21,16 @@
             
         </div>
         <div class="row1">
-            <a class="headlink" href="home.html"><h2>Home</h2></a>
+            <a class="headlink" href="home.html"><h3>Home</h3></a>
         </div>
         <div class="row1">
-            <a class="headlink" href="aboutus.html"><h2>About Us</h2></a>
+            <a class="headlink" href="aboutus.html"><h3>About Us</h3></a>
         </div>
         <div class="row1">
-            <a class="headlink" href="service.html"><h2>Service</h2></a>
+            <a class="headlink" href="service.html"><h3>Service</h3></a>
         </div>
         <div class="row1">
-            <a class="headlink" href="contactus.html"><h2>Contact us</h2></a>
+            <a class="headlink" href="contactus.html"><h3>Contact us</h3></a>
         </div>
         <div class="row1">
            <button id="modalBtn"class="btn1" >Login or Sign-Up</button>
@@ -42,13 +44,14 @@
               
               <div id="modal-body">
                 <form action="login_submit.php" method="post" id="form1">
-                    <!-- Enter the name : <br/>
+                    Enter the name : <br/>
                     <input type="text" name="name"/><br/> -->
                     Enter the email  <br/>
                     <input type="text" name="email" required/><br/>
                     Enter the password  <br/>
                     <input type="password" name="password" required/><br/>
                     <input type="submit" name="submit" value="submit">
+                  
                 </form>
 
               </div>
@@ -71,21 +74,21 @@
    
       
     <div class="content">
-        <!-- The content which is placed at the center of the carousel -->
+        
         <div class="carousel-content">
           <h1 class="carousel-heading">E-Pharm</h1>
-          <h3>This is an e- pharmacy web based application which provide
+          <h3 >This is an e- pharmacy web based application which provide
             <br /> medicines to the patients as well as it will connect dealers
             <br /> with the suppliers all over the country.
-          </h3></h3>
+          </h3>
         </div>
         <div class="slideshow">
-          <!-- carousel control buttons -->
+          
           <button class="slide-btn slide-btn-1"></button>
           <button class="slide-btn slide-btn-2"></button>
           <button class="slide-btn slide-btn-3"></button>
           <button class="slide-btn slide-btn-4"></button>
-          <!-- carousel wrapper which contains all images -->
+          
           <div class="slideshow-wrapper">
             <div class="slide">
               <img
@@ -96,7 +99,7 @@
             <div class="slide" >
               <img
                 class="slide-img"
-                src="img2.jpg" 
+                src="wall.jpg" 
              
               />
             </div>
@@ -116,5 +119,24 @@
         </div>
       </div>
     
+
+      <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Epharm © 2022</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+      
+
 </body>
 </html>
