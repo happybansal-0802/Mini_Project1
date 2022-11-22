@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Filter And Search</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      *,
+      ::after,
+      ::before {
+        box-sizing: border-box;
+      }
+
+      #header {
+        vertical-align: top;
+        /* border: 1px red solid; */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 120px;
+      }
+
+      #logo {
+        object-fit: cover;
+        width: 80%;
+        height: 100%;
+      }
+
+      .row1 {
+        text-align: center;
+        /* border: green 1px solid; */
+        height: 100%;
+        width: 20%;
+      }
+      
+      .headlink {
+        margin: 10px;
+        text-align: center;
+
+        text-decoration: none;
+        color: black;
+      }
+
+      .headlink > h2 {
+        margin-top: 23px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      .btn1 {
+        font-size: medium;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-top: 30px;
+        border-radius: 64px;
+        height: 50%;
+        width: 70%;
+        background-color: rgb(168, 215, 247);
+      }
+
+      .btn1:hover {
+        background-color: rgb(5, 57, 102);
+      }
+      #content {
+        padding: 150px;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #f5f8ff;
+      }
+      .wrapper {
+        width: 95%;
+        margin: 0 auto;
+      }
+      #search-container {
+        margin: 1em 0;
+      }
+      #search-container input {
+        background-color: transparent;
+        width: 40%;
+        border-bottom: 2px solid #110f29;
+        padding: 1em 0.3em;
+      }
+      #search-container input:focus {
+        border-bottom-color: #6759ff;
+      }
+      #search-container button {
+        padding: 1em 2em;
+        margin-left: 1em;
+        background-color: #6759ff;
+        color: #ffffff;
+        border-radius: 5px;
+        margin-top: 0.5em;
+      }
+      .button-value {
+        border: 2px solid #6759ff;
+        padding: 1em 2.2em;
+        border-radius: 3em;
+        background-color: transparent;
+        color: #6759ff;
+        cursor: pointer;
+      }
+      .active {
+        background-color: #6759ff;
+        color: #ffffff;
+      }
+      #products {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 2em;
+        padding: 2em 0;
+      }
+      .card {
+        background-color: #ffffff;
+        max-width: 18em;
+        margin-top: 1em;
+        margin-left: 5em;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+      }
+      .image-container {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        height: 15em;
+      }
+      .container {
+        padding-top: 1em;
+        color: #110f29;
+      }
+      .container h5 {
+        font-weight: 500;
+      }
+      .hide {
+        display: none;
+      }
+      @media screen and (max-width: 720px) {
+        img {
+          max-width: 100%;
+          object-fit: contain;
+          height: 10em;
+        }
+        .card {
+          max-width: 10em;
+          margin-top: 1em;
+        }
+        #products {
+          grid-template-columns: auto auto;
+          grid-column-gap: 1em;
+        }
+      }
+      
+.footer-basic {
+  padding: 40px 0;
+  background-color: #ffffff;
+  color: #4b4c4d;
+}
+
+.footer-basic ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-basic li {
+  padding: 0 10px;
+}
+
+.footer-basic ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity: 1;
+}
+
+.footer-basic .social {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.footer-basic .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity: 0.9;
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 0;
+}
+    </style>
+  </head>
+  <body style="display: block;">
+    <div>
+        <div id="header">
+      <div class="row1">
+        <a href="dashboard.html"><img id="logo" src="Comiflame\epharm-logo.png" /></a>
+      </div>
+      <div class="row1">
+        <a class="headlink" href="home.html"><h2>Home</h2></a>
+      </div>
+      <div class="row1">
+        <a class="headlink" href="aboutus.html"><h2>About Us</h2></a>
+      </div>
+      <div class="row1">
+        <a class="headlink" href="service.html"><h2>Service</h2></a>
+      </div>
+      <div class="row1">
+        <a class="headlink" href="contactus.html"><h2>Contact us</h2></a>
+      </div>
+     
+    </div>
+      <div >
+      <center>
+        <div class="wrapper">
+          <div id="search-container">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search product name here.."
+            />
+            <button id="search">Search</button>
+          </div>
+          <div id="buttons">
+            <button class="button-value" onclick="filterProduct('all')">
+              All
+            </button>
+            <button class="button-value" onclick="filterProduct('under49')">
+              Under 49
+            </button>
+            <button class="button-value" onclick="filterProduct('under99')">
+              Under 99
+            </button>
+            <button class="button-value" onclick="filterProduct('under149')">
+              Under 149
+            </button>
+            <button class="button-value" onclick="filterProduct('under199')">
+              Under 199
+            </button>
+          </div>
+          <div id="products">
+            
+            
+          <div class="card under49">
+            <div class="image-container">
+                <img src="Comiflame\combiflam-strip-of-20-tablets-1-1641534272.webp">
+            </div>
+            <div class="container">
+                <h5 class="product-name">Combiflame</h5>
+                <h6>₹30</h6>
+               
+                <div></div>
+            </div></div>
+            <div class="card under49">
+                <div class="image-container">
+                    <img src="crosin\crocin-pain-relief-tablet.png">
+                </div>
+                <div class="container">
+                    <h5 class="product-name">Crocin</h5>
+                    <h6>₹49</h6>
+                  
+                </div>
+            </div>
+            <div class="card under99">
+                <div class="image-container">
+                    <img src="Dettol\dettol-antiseptic-liquid-bottle-of-550-ml-2-1656923531.webp">
+                </div><div class="container">
+                    <h5 class="product-name">Dettol-Liquid</h5>
+                    <h6>₹99</h6>
+                   
+                </div></div><div class="card under49">
+                    <div class="image-container">
+                        <img src="Dolo\dolo-650mg-strip-of-15-tablets-2-1653986150.webp">
+                    </div>
+                    <div class="container">
+                        <h5 class="product-name">Dolo</h5>
+                        <h6>₹29</h6>
+                       
+                    </div>
+                </div>
+                <div class="card under149">
+                    <div class="image-container">
+                        <img src="hansaplast\hansaplast-regular.webp">
+                    </div>
+                    <div class="container">
+                        <h5 class="product-name">Hansaplast</h5>
+                        <h6>₹129</h6>
+                        
+                    </div>
+                </div>
+                <div class="card under99">
+                    <div class="image-container">
+                        <img src="Meftal Spas\meftal-spas-tablet-2-1641531171.webp">
+                    </div><div class="container">
+                        <h5 class="product-name">Meftal-Spas</h5>
+                        <h6>₹89</h6>
+                       
+                    </div></div>
+                    <div class="card under199">
+                        <div class="image-container">
+                            <img src="Multivitamin\pharmeasy-multivitamin-multimineral-immunity-booster-complete-nutrition-bottle-of-60-2-1666336677.webp">
+                        </div><div class="container">
+                            <h5 class="product-name">MultiVitamins</h5>
+                            <h6>₹189</h6>
+                           
+                   </div></div><div class="card under49">
+                         <div class="image-container">
+                                <img src="refresh eye drop\sswzofpcesatvgabnccq.webp">
+                      </div><div class="container">
+                                <h5 class="product-name">Refresh eye drops</h5>
+                       <h6>₹49</h6>
+                      
+                      
+                    </div>
+                    <div>
+
+                </div></div>
+                <div class="card under49">
+                  <div class="image-container">
+                      <img src="Saridon\ftsmbwoi0gmmxgluxdn4.webp">
+                  </div>
+                  <div class="container">
+                      <h5 class="product-name">Saridon</h5>
+                      <h6>₹50</h6>
+                     
+                      <div></div>
+                  </div></div>
+                  <div class="card under49">
+                    <div class="image-container">
+                        <img src="Sevlon\savlon-antiseptic-disinfectant-liquid-1000-ml-2-1658475751.webp">
+                    </div>
+                    <div class="container">
+                        <h5 class="product-name">Sevlon</h5>
+                        <h6>₹50</h6>
+                       
+                        <div></div>
+                    </div></div>
+                    <div class="card under49">
+                      <div class="image-container">
+                          <img src="Soframycin\soframycin-tube-of-30gm-skin-cream-1-1662962968.webp">
+                      </div>
+                      <div class="container">
+                          <h5 class="product-name">Soframycin</h5>
+                          <h6>₹50</h6>
+                         
+                          <div></div>
+                      </div></div>
+                      <!-- <div class="card Under99">
+                        <div class="image-container">
+                            <img src="Saridon\ftsmbwoi0gmmxgluxdn4.webp">
+                        </div>
+                        <div class="container">
+                            <h5 class="product-name">Saridon</h5>
+                            <h6>₹50</h6>
+                           
+                            <div></div>
+                        </div></div> -->
+                        
+                </div>
+
+          </div>
+        </div>
+      </center>
+    </div>
+    
+    <div class="footer-basic">
+      <footer>
+          <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+          <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Home</a></li>
+              <li class="list-inline-item"><a href="#">Services</a></li>
+              <li class="list-inline-item"><a href="#">About</a></li>
+              <li class="list-inline-item"><a href="#">Contact Us</a></li>
+              
+          </ul>
+          <p class="copyright">Epharm © 2022</p>
+      </footer>
+  </div>
+    <!-- Script -->
+    <script>
+     
+    
+  </body>
+</html>

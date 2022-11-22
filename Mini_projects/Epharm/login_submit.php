@@ -10,9 +10,12 @@
         echo "connection failed : ".mysqli_connect_error();
         exit;
     }
+   
+   
+    $email= $_GET['email'];
+    $password= $_GET['password'];
 
-    $email= $_POST['email'];
-    $password= $_POST['password'];
+
 
     $sql="SELECT * FROM customers where email='$email' and password='$password'";
 
@@ -25,7 +28,7 @@
     $row=mysqli_fetch_assoc($result);
     if($row)
     {
-        echo"Hello ".$row['name']."!";
+        header("Location: home.html");
     }
     else
     {
