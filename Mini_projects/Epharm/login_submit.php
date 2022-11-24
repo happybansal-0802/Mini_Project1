@@ -28,7 +28,7 @@
     $row=mysqli_fetch_assoc($result);
     if($row)
     {
-        header("Location: home.html");
+        header("Location: home.php");
     }
     else
     {

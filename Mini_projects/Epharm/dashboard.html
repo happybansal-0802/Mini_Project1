@@ -12,7 +12,50 @@
     <title></title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <style>
-        
+               .glowing-button {
+        background-image: linear-gradient(45deg,#ac3dfc,#6148fd,#00ccff,#1900ff,#1e0db9,#8400ff);
+        background-size: 400%;
+        border: 7px solid rgb(5, 6, 45);
+        box-shadow: 0 0 15px rgb(47, 0, 255);
+        box-sizing: border-box;
+        color: #FFFFFF;
+        display: flex;
+        font-size: 18px;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 1.5rem;
+        position: absolute;
+       
+        transform: translate(-50%,-50%);
+        animation: animation 27s infinite;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        }
+        @keyframes animation {
+            0% {
+                background-position:0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .glowing-button span {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+            border-radius: 1rem;
+        }
+        .glowing-button span:hover {
+            background: none;
+            transform: 700ms;
+        }
+
       </style>
 </head>
 <body">
@@ -24,7 +67,7 @@
             
         </div>
         <div class="row1">
-            <a class="headlink" href="home.html"  style="text-decoration:none;"><h3>Home</h3></a>
+            <a class="headlink" href="home.php"  style="text-decoration:none;"><h3>Home</h3></a>
         </div>
         <div class="row1">
             <a class="headlink" href="aboutus.html"  style="text-decoration:none;"><h3>About Us</h3></a>
@@ -36,7 +79,13 @@
             <a class="headlink" href="contactus.html" style="text-decoration:none;"><h3>Contact us</h3></a>
         </div>
         <div class="row1">
-           <a class="headlink" href="signup.html" style="text-decoration: none;color: black;"><h4 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;padding-top: 23px;text-decoration: none;">Login or sign up</h4></a> 
+           <a class="headlink" href="signup.php"  > 
+            <center>
+              <button class="glowing-button" style="margin-top:35px ;margin-left: 120px;">
+                <span class="inner">Login</span>
+            </button>
+           </center>
+</a> 
            
         </div>
         
@@ -103,7 +152,7 @@
           <td>
             <a href="personalcare.html">
               <div class="div1">
-                <img src="Personal Care.webp" height="70px" width="80px" style="width: 50%" />
+                <img src="Personal Care.webp"  />
                 <p></p>
                 <button class="btn btn1">Personal care</button>
                 <br /><br />
@@ -271,12 +320,12 @@
 
       <div class="footer-basic">
         <footer>
-            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <div class="social"><a href="https://www.instagram.com/accounts/login/"><i class="icon ion-social-instagram"></i></a><a href="https://www.snapchat.com"><i class="icon ion-social-snapchat"></i></a><a href="https://www.twitter.com"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Services</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+                <li class="list-inline-item"><a href="home.php">Home</a></li>
+                <li class="list-inline-item"><a href="service.html">Services</a></li>
+                <li class="list-inline-item"><a href="aboutus.html">About</a></li>
+                <li class="list-inline-item"><a href="contactus.html">Contact Us</a></li>
          
             </ul>
             <p class="copyright">Epharm © 2022</p>

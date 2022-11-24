@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,6 +10,14 @@
     <link rel="stylesheet" href="sign.css" />
   </head>
   <body>
+  <?php
+                    // Your message code
+                    if(isset($_SESSION['message']))
+                    {
+                        echo '<h4 class="alert alert-warning" style="color:rgb(27,27,180)">'.$_SESSION['message'].'</h4>';
+                        unset($_SESSION['message']);
+                    } // Your message code
+                ?>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="signupsubmit.php" method="post">
@@ -25,15 +35,17 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="login_submit.php" method="get" id="form1">
+        <form action="login-code.php" method="post" id="form1">
           <h1>Sign in</h1>
 
           <span>use your account</span>
-          <input type="text" placeholder="email" name="email" />
+          <input type="email" placeholder="email" name="email" />
           <input type="password" placeholder="password" name="password" />
 
-          <button type="submit">Sign In</button>
+          <button name="login_button" type="submit">Sign In</button>
         </form>
+       
+
       </div>
       <div class="overlay-container">
         <div class="overlay">
